@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elif ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    text-align:center;
+    color:white;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+/* GÖKKUŞAĞI BAŞLIK */
+.title{
+    font-family:'Pacifico',cursive;
+    font-size:150px;
+    font-style:italic;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size:400%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation: rainbowMove 6s linear infinite;
+    text-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes rainbowMove{
+    0%{background-position:0%;}
+    100%{background-position:400%;}
+}
+
+/* Yazılar */
+.message{
+    font-size:30px;
+    margin:20px 0;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, violet);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation: fadeUp 2s ease forwards;
+    opacity:0;
+}
+
+.message:nth-child(1){animation-delay:0.5s}
+.message:nth-child(2){animation-delay:1s}
+.message:nth-child(3){animation-delay:1.5s}
+.message:nth-child(4){animation-delay:2s}
+
+@keyframes fadeUp{
+    from{transform:translateY(40px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+
+/* Buton */
+.button{
+    margin-top:40px;
+    padding:15px 40px;
+    font-size:20px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    background:white;
+    color:#ff4b6e;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.button:hover{
+    transform:scale(1.1);
+    background:#ff4b6e;
+    color:white;
+}
+
+/* Kalpler */
+.heart{
+    position:fixed;
+    bottom:-10px;
+    font-size:20px;
+    animation: floatUp 6s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes floatUp{
+    0%{transform:translateY(0) rotate(0deg);}
+    100%{transform:translateY(-110vh) rotate(360deg);}
+}
+
+.rose{
+    font-size:120px;
+    margin-top:40px;
+}
+
+</style>
+</head>
+<body>
+
+<section>
+    <div class="title">ELİF</div>
+</section>
+
+<section>
+    <div class="message">Bazen düşünüyorum da, hayat garip bir şekilde insanı doğru kişilerle karşılaştırıyor. Seninle konuşmaya başladığımız günden beri günler biraz daha keyifli geçiyor. Ekranın arkasında olsak bile o samimiyeti hissedebilmek herkesle olacak bir şey değil bence.
+
+Mesafeler var belki ama sohbet ederken sanki yan yana oturuyormuşuz gibi rahat hissediyorum. Seninle konuşmak yorucu değil, aksine günün stresini alıyor. Küçük şeylere verdiğin tepkiler, attığın o basit ama içten mesajlar… İnsan farkında olmadan gülümsüyor.
+
+Abartılı sözler söylemeye gerek yok aslında. Çünkü bazı şeyler sade haliyle daha güzel. Seninle konuşmak bana iyi geliyor, bunu bilmeni istedim.</div>
+
+
+
+
+    <button class="button" onclick="alert('Benimle çıkar mısın? ❤️')">
+        Sana Karşı Boş Değilim
+    </button>
+
+    <div class="rose">🌹</div>
+</section>
+
+<script>
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+10+"px";
+    heart.style.animationDuration=Math.random()*3+3+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{heart.remove();},6000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
